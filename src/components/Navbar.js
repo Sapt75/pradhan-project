@@ -2,7 +2,7 @@ import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-    { name: 'Dashboard', href: '/', current: true },
+    { name: 'Dashboard', href: '/', current: false },
     { name: 'About Us', href: '/', current: false },
     { name: 'Our Showcase', href: '/', current: false },
     { name: 'Our Service', href: '/', current: false },
@@ -13,12 +13,12 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Navbar() {
+export default function Example() {
     return (
         <Disclosure as="nav" className="background">
             {({ open }) => (
                 <>
-                    <div className="max-w-7xl px-2 sm:px-6 lg:px-8">
+                    <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                                 {/* Mobile menu button*/}
@@ -34,27 +34,32 @@ export default function Navbar() {
                             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex flex-shrink-0 items-center">
                                     <img
-                                        className="hidden sm:h-4 sm:block h-8 w-auto lg:block"
+                                        className="block h-8 w-auto lg:hidden"
+                                        src="/logo_1.png"
+                                        alt="Your Company"
+                                    />
+                                    <img
+                                        className="hidden h-8 w-auto lg:block"
                                         src="/logo_1.png"
                                         alt="Your Company"
                                     />
                                 </div>
-                            </div>
-                            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                <div className="flex space-x-4">
-                                    {navigation.map((item) => (
-                                        <a
-                                            key={item.name}
-                                            href={item.href}
-                                            className={classNames(
-                                                item.current ? 'text-white' : 'text-gray-300 hover:text-white',
-                                                'px-3 py-2 rounded-md text-sm font-medium'
-                                            )}
-                                            aria-current={item.current ? 'page' : undefined}
-                                        >
-                                            {item.name}
-                                        </a>
-                                    ))}
+                                <div className="hidden sm:ml-6 sm:block">
+                                    <div className="flex space-x-4">
+                                        {navigation.map((item) => (
+                                            <a
+                                                key={item.name}
+                                                href={item.href}
+                                                className={classNames(
+                                                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                    'px-3 py-2 rounded-md text-sm font-medium'
+                                                )}
+                                                aria-current={item.current ? 'page' : undefined}
+                                            >
+                                                {item.name}
+                                            </a>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -83,3 +88,4 @@ export default function Navbar() {
         </Disclosure>
     )
 }
+
