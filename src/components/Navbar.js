@@ -1,10 +1,13 @@
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Fragment } from 'react'
+import { Menu, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 const navigation = [
     { name: 'Dashboard', href: '/', current: false },
     { name: 'About Us', href: '/', current: false },
-    { name: 'Our Showcase', href: '/', current: false },
+    { name: 'Our Showcase', href: '/', current: "Our Showcase" },
     { name: 'Our Service', href: '/', current: false },
     { name: 'Contact Us', href: '/', current: false },
 ]
@@ -13,7 +16,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function Navbar() {
     return (
         <Disclosure as="nav" className="background">
             {({ open }) => (
@@ -44,21 +47,165 @@ export default function Example() {
                                         alt="Your Company"
                                     />
                                 </div>
-                                <div className="hidden sm:ml-6 sm:block">
+                                <div className="hidden absolute right-0 sm:ml-6 sm:block">
                                     <div className="flex space-x-4">
-                                        {navigation.map((item) => (
-                                            <a
-                                                key={item.name}
-                                                href={item.href}
-                                                className={classNames(
-                                                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                    'px-3 py-2 rounded-md text-sm font-medium'
-                                                )}
-                                                aria-current={item.current ? 'page' : undefined}
+                                        <a
+                                            key="Dashboard"
+                                            href="/"
+                                            className={classNames(
+                                                'txt hover:text-white',
+                                                'px-3 py-2 rounded-md text-sm font-medium'
+                                            )}
+                                        >
+                                            Dashboard
+                                        </a>
+                                        <a
+                                            key="About Us"
+                                            href="/"
+                                            className={classNames(
+                                                'txt hover:text-white',
+                                                'px-3 py-2 rounded-md text-sm font-medium'
+                                            )}
+                                        >
+                                            About Us
+                                        </a>
+                                        <Menu as="div" className="relative inline-block text-left">
+                                            <div>
+                                                <Menu.Button className="inline-flex">
+                                                    <a
+                                                        key="Our Showcase"
+                                                        href="/"
+                                                        className={classNames(
+                                                            'txt hover:text-white',
+                                                            'px-3 py-2 rounded-md text-sm font-medium'
+                                                        )}
+                                                    >
+                                                        Our Showcase
+                                                    </a>
+                                                    <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 absolute left-24 top-2 text-white" aria-hidden="true" />
+                                                </Menu.Button>
+                                            </div>
+                                            <Transition
+                                                as={Fragment}
+                                                enter="transition ease-out duration-100"
+                                                enterFrom="transform opacity-0 scale-95"
+                                                enterTo="transform opacity-100 scale-100"
+                                                leave="transition ease-in duration-75"
+                                                leaveFrom="transform opacity-100 scale-100"
+                                                leaveTo="transform opacity-0 scale-95"
                                             >
-                                                {item.name}
-                                            </a>
-                                        ))}
+                                                <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                    <div className="py-1">
+                                                        <Menu.Item>
+                                                            {({ active }) => (
+                                                                <a
+                                                                    href="/"
+                                                                    className={classNames(
+                                                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                                                        'block px-4 py-2 text-sm'
+                                                                    )}
+                                                                >
+                                                                    Images Section
+                                                                </a>
+                                                            )}
+                                                        </Menu.Item>
+                                                        <Menu.Item>
+                                                            {({ active }) => (
+                                                                <a
+                                                                    href="/"
+                                                                    className={classNames(
+                                                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                                                        'block px-4 py-2 text-sm'
+                                                                    )}
+                                                                >
+                                                                    Cine-Videos Section
+                                                                </a>
+                                                            )}
+                                                        </Menu.Item>
+                                                        <Menu.Item>
+                                                            {({ active }) => (
+                                                                <a
+                                                                    href="/"
+                                                                    className={classNames(
+                                                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                                                        'block px-4 py-2 text-sm'
+                                                                    )}
+                                                                >
+                                                                    Designed Photobook
+                                                                </a>
+                                                            )}
+                                                        </Menu.Item>
+                                                    </div>
+                                                </Menu.Items>
+                                            </Transition>
+                                        </Menu>
+                                        <Menu as="div" className="relative inline-block text-left">
+                                            <div>
+                                                <Menu.Button className="inline-flex">
+                                                    <a
+                                                        key="Our Service"
+                                                        href="/"
+                                                        className={classNames(
+                                                            'txt hover:text-white',
+                                                            'px-3 py-2 rounded-md text-sm font-medium'
+                                                        )}
+                                                    >
+                                                        Our Service
+                                                    </a>
+                                                    <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 absolute left-20 top-2 text-white" aria-hidden="true" />
+                                                </Menu.Button>
+                                            </div>
+                                            <Transition
+                                                as={Fragment}
+                                                enter="transition ease-out duration-100"
+                                                enterFrom="transform opacity-0 scale-95"
+                                                enterTo="transform opacity-100 scale-100"
+                                                leave="transition ease-in duration-75"
+                                                leaveFrom="transform opacity-100 scale-100"
+                                                leaveTo="transform opacity-0 scale-95"
+                                            >
+                                                <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                    <div className="py-1">
+                                                        <Menu.Item>
+                                                            {({ active }) => (
+                                                                <a
+                                                                    href="/"
+                                                                    className={classNames(
+                                                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                                                        'block px-4 py-2 text-sm'
+                                                                    )}
+                                                                >
+                                                                    Pre Wedding or Post Wedding
+                                                                </a>
+                                                            )}
+                                                        </Menu.Item>
+                                                        <Menu.Item>
+                                                            {({ active }) => (
+                                                                <a
+                                                                    href="/"
+                                                                    className={classNames(
+                                                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                                                        'block px-4 py-2 text-sm'
+                                                                    )}
+                                                                >
+                                                                    Wedding
+                                                                </a>
+                                                            )}
+                                                        </Menu.Item>
+                                                    </div>
+                                                </Menu.Items>
+                                            </Transition>
+                                        </Menu>
+                                        <a
+                                            key="Contact Us"
+                                            href="/"
+                                            className={classNames(
+                                                'txt hover:text-white',
+                                                'px-3 py-2 rounded-md text-sm font-medium'
+                                            )}
+                                        >
+                                            Contact Us
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +220,7 @@ export default function Example() {
                                     as="a"
                                     href={item.href}
                                     className={classNames(
-                                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                        'text-gray-300 hover:text-white',
                                         'block px-3 py-2 rounded-md text-base font-medium'
                                     )}
                                     aria-current={item.current ? 'page' : undefined}
