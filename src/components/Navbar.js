@@ -3,13 +3,17 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { useState } from 'react'
 
 const navigation = [
-    { name: 'Dashboard', href: '/', current: false },
-    { name: 'About Us', href: '/', current: false },
-    { name: 'Our Showcase', href: '/', current: "Our Showcase" },
-    { name: 'Our Service', href: '/', current: false },
-    { name: 'Contact Us', href: '/', current: false },
+    { name: 'Image Section', href: '/', current: false },
+    { name: 'Cine-Videos Section', href: '/', current: false },
+    { name: 'Designed Photobook', href: '/', current: false }
+]
+
+const navigation1 = [
+    { name: 'Pre Wedding or Post Wedding', href: '/', current: false },
+    { name: 'Wedding', href: '/', current: false }
 ]
 
 function classNames(...classes) {
@@ -17,6 +21,8 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+    const [show, setshow] = useState(false);
+    const [serv, setserv] = useState(false)
     return (
         <Disclosure as="nav" className="background">
             {({ open }) => (
@@ -37,17 +43,17 @@ export default function Navbar() {
                             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex flex-shrink-0 items-center">
                                     <img
-                                        className="block h-8 w-auto lg:hidden"
+                                        className="block h-8 w-auto lg:hidden logo"
                                         src="/logo_1.png"
                                         alt="Your Company"
                                     />
                                     <img
-                                        className="hidden h-8 w-auto lg:block"
+                                        className="hidden h-8 w-auto lg:block logo"
                                         src="/logo_1.png"
                                         alt="Your Company"
                                     />
                                 </div>
-                                <div className="hidden absolute right-0 sm:ml-6 sm:block">
+                                <div className="hidden absolute top-3 right-0 sm:ml-6 sm:block">
                                     <div className="flex space-x-4">
                                         <a
                                             key="Dashboard"
@@ -214,20 +220,105 @@ export default function Navbar() {
 
                     <Disclosure.Panel className="sm:hidden">
                         <div className="space-y-1 px-2 pt-2 pb-3">
-                            {navigation.map((item) => (
-                                <Disclosure.Button
-                                    key={item.name}
-                                    as="a"
-                                    href={item.href}
-                                    className={classNames(
-                                        'text-gray-300 hover:text-white',
-                                        'block px-3 py-2 rounded-md text-base font-medium'
-                                    )}
-                                    aria-current={item.current ? 'page' : undefined}
-                                >
-                                    {item.name}
-                                </Disclosure.Button>
-                            ))}
+                            <Disclosure.Button
+                                key="Dashbord"
+                                as="a"
+                                href="/"
+                                className={classNames(
+                                    'text-gray-300 hover:text-white',
+                                    'block px-3 py-2 rounded-md text-base font-medium'
+                                )}
+                            >
+                                Dashbord
+                            </Disclosure.Button>
+                            <Disclosure.Button
+                                key="About Us"
+                                as="a"
+                                href="/"
+                                className={classNames(
+                                    'text-gray-300 hover:text-white',
+                                    'block px-3 py-2 rounded-md text-base font-medium'
+                                )}
+                            >
+                                About Us
+                            </Disclosure.Button>
+                            <Disclosure.Button
+                                onClick={
+                                    (event) => {
+                                        show ? setshow(false) : setshow(true)
+                                        event.preventDefault()
+                                    }
+                                }
+                                key="Our Showcase"
+                                as="a"
+                                href="/"
+                                className={classNames(
+                                    'text-gray-300 hover:text-white',
+                                    'block px-3 py-2 rounded-md text-base font-medium'
+                                )}
+                            >
+                                Our Showcase
+                                {
+                                    navigation.map((item) => (
+                                        <Disclosure.Button
+                                            key={item.name}
+                                            as="a"
+                                            href={item.href}
+                                            className={classNames(show ? 'visible' : 'hidden',
+                                                'text-gray-300 hover:text-white',
+                                                'block px-3 py-2 rounded-md text-base font-medium'
+                                            )}
+                                            aria-current={item.current ? 'page' : undefined}
+                                        >
+                                            {item.name}
+                                        </Disclosure.Button>
+                                    ))
+                                }
+                            </Disclosure.Button>
+                            <Disclosure.Button
+                                onClick={
+                                    (event) => {
+                                        serv ? setserv(false) : setserv(true)
+                                        event.preventDefault()
+                                    }
+                                }
+                                key="Our Service"
+                                as="a"
+
+                                className={classNames(
+                                    'text-gray-300 hover:text-white',
+                                    'block px-3 py-2 rounded-md text-base font-medium'
+                                )}
+                            >
+                                Our Service
+                                {
+                                    navigation1.map((item) => (
+                                        <Disclosure.Button
+                                            key={item.name}
+                                            as="a"
+                                            href={item.href}
+                                            className={classNames(serv ? 'visible' : 'hidden',
+                                                'text-gray-300 hover:text-white',
+                                                'block px-3 py-2 rounded-md text-base font-medium'
+                                            )}
+                                            aria-current={item.current ? 'page' : undefined}
+                                        >
+                                            {item.name}
+                                        </Disclosure.Button>
+                                    ))
+                                }
+                            </Disclosure.Button>
+                            <Disclosure.Button
+                                key="Contact Us"
+                                as="a"
+                                href="/"
+                                className={classNames(
+                                    'text-gray-300 hover:text-white',
+                                    'block px-3 py-2 rounded-md text-base font-medium'
+                                )}
+                            >
+                                Contact Us
+                            </Disclosure.Button>
                         </div>
                     </Disclosure.Panel>
                 </>
