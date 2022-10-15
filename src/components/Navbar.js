@@ -65,7 +65,7 @@ export default function Navbar() {
                                                 'px-3 py-2 rounded-md text-sm font-medium'
                                             )}
                                         >
-                                            Home
+                                            HOME
                                         </a>
                                         <a
                                             key="About Us"
@@ -75,7 +75,7 @@ export default function Navbar() {
                                                 'px-3 py-2 rounded-md text-sm font-medium'
                                             )}
                                         >
-                                            About Us
+                                            ABOUT US
                                         </a>
                                         <Menu as="div" className="relative inline-block text-left">
                                             <div>
@@ -88,9 +88,9 @@ export default function Navbar() {
                                                             'px-3 py-2 rounded-md text-sm font-medium'
                                                         )}
                                                     >
-                                                        Our Showcase
+                                                        OUR SHOWCASE
                                                     </a>
-                                                    <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 absolute left-24 top-2 text-white" aria-hidden="true" />
+                                                    <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 absolute left-28 top-2 text-white" aria-hidden="true" />
                                                 </Menu.Button>
                                             </div>
                                             <Transition
@@ -113,7 +113,7 @@ export default function Navbar() {
                                                                         'block px-4 py-2 text-sm'
                                                                     )}
                                                                 >
-                                                                    Images Section
+                                                                    IMAGES SECTION
                                                                 </a>
                                                             )}
                                                         </Menu.Item>
@@ -126,7 +126,7 @@ export default function Navbar() {
                                                                         'block px-4 py-2 text-sm'
                                                                     )}
                                                                 >
-                                                                    Cine-Videos Section
+                                                                    CINE-VIDEOS SECTION
                                                                 </a>
                                                             )}
                                                         </Menu.Item>
@@ -139,7 +139,7 @@ export default function Navbar() {
                                                                         'block px-4 py-2 text-sm'
                                                                     )}
                                                                 >
-                                                                    Designed Photobook
+                                                                    DESIGNED PHOTOBOOK
                                                                 </a>
                                                             )}
                                                         </Menu.Item>
@@ -212,7 +212,7 @@ export default function Navbar() {
                                                 'px-3 py-2 rounded-md text-sm font-medium'
                                             )}
                                         >
-                                            Contact Us
+                                            CONTACT US
                                         </a>
                                     </div>
                                 </div>
@@ -231,7 +231,7 @@ export default function Navbar() {
                                     'block px-3 py-2 rounded-md text-base font-medium txt'
                                 )}
                             >
-                                Home
+                                HOME
                             </Disclosure.Button>
                             <Disclosure.Button
                                 key="About Us"
@@ -242,7 +242,7 @@ export default function Navbar() {
                                     'block px-3 py-2 rounded-md text-base font-medium txt'
                                 )}
                             >
-                                About Us
+                                ABOUT US
                             </Disclosure.Button>
                             <Disclosure.Button
                                 onClick={
@@ -259,7 +259,7 @@ export default function Navbar() {
                                     'block px-3 py-2 rounded-md text-base font-medium txt'
                                 )}
                             >
-                                Our Showcase
+                                OUR SHOWCASE
                                 <div className='absolute sx:right-34 top-42 xsm:right-60'>
                                     <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5
                                  text-white" aria-hidden="true" />
@@ -297,7 +297,7 @@ export default function Navbar() {
                                     'block px-3 py-2 rounded-md text-base font-medium txt'
                                 )}
                             >
-                                Our Service
+                                OUR SERVICE
                                 <div className='absolute sx:right-34 top-54 xsm:right-60'>
                                     <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5
                                  text-white" aria-hidden="true" />
@@ -328,7 +328,7 @@ export default function Navbar() {
                                     'block px-3 py-2 rounded-md text-base font-medium txt'
                                 )}
                             >
-                                Contact Us
+                                CONTACT US
                             </Disclosure.Button>
                         </div>
                     </Disclosure.Panel>
