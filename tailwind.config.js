@@ -5,7 +5,8 @@ module.exports = {
   darkMode: 'media', // or 'class'
   theme: {
     screens: {
-      sx: '300px',
+      sx: '250px',
+      xsm: '400px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -94,11 +95,14 @@ module.exports = {
       24: '6rem',
       28: '7rem',
       32: '8rem',
+      34: '8.5rem',
       36: '9rem',
       40: '10rem',
+      42: '10.7rem',
       44: '11rem',
       48: '12rem',
       52: '13rem',
+      54: '13.4rem',
       56: '14rem',
       60: '15rem',
       64: '16rem',
@@ -625,6 +629,7 @@ module.exports = {
     maxWidth: ({ theme, breakpoints }) => ({
       none: 'none',
       0: '0rem',
+      ss: '18rem',
       xs: '20rem',
       sm: '24rem',
       md: '28rem',

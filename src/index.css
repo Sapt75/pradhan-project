@@ -2,14 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-.background{
+.background {
     background: #b00539;
 }
 
-.txt{
+.head{
+    color: #b00539;
+}
+
+.txt {
     color: #ffc000;
 }
 
-.logo{
-    background:#ffc000;
+.logo {
+    background: #ffc000;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+}
+
+.section1{
+    background: #fed8e7;
 }

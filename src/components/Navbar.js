@@ -5,6 +5,7 @@ import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useState } from 'react'
 
+
 const navigation = [
     { name: 'Image Section', href: '/', current: false },
     { name: 'Cine-Videos Section', href: '/', current: false },
@@ -22,7 +23,8 @@ function classNames(...classes) {
 
 export default function Navbar() {
     const [show, setshow] = useState(false);
-    const [serv, setserv] = useState(false)
+    const [serv, setserv] = useState(false);
+    
     return (
         <Disclosure as="nav" className="background">
             {({ open }) => (
@@ -56,14 +58,14 @@ export default function Navbar() {
                                 <div className="hidden absolute top-3 right-0 sm:ml-6 sm:block">
                                     <div className="flex space-x-4">
                                         <a
-                                            key="Dashboard"
+                                            key="Home"
                                             href="/"
                                             className={classNames(
                                                 'txt hover:text-white',
                                                 'px-3 py-2 rounded-md text-sm font-medium'
                                             )}
                                         >
-                                            Dashboard
+                                            Home
                                         </a>
                                         <a
                                             key="About Us"
@@ -221,15 +223,15 @@ export default function Navbar() {
                     <Disclosure.Panel className="sm:hidden">
                         <div className="space-y-1 px-2 pt-2 pb-3">
                             <Disclosure.Button
-                                key="Dashbord"
+                                key="Home"
                                 as="a"
                                 href="/"
                                 className={classNames(
                                     'text-gray-300 hover:text-white',
-                                    'block px-3 py-2 rounded-md text-base font-medium'
+                                    'block px-3 py-2 rounded-md text-base font-medium txt'
                                 )}
                             >
-                                Dashbord
+                                Home
                             </Disclosure.Button>
                             <Disclosure.Button
                                 key="About Us"
@@ -237,7 +239,7 @@ export default function Navbar() {
                                 href="/"
                                 className={classNames(
                                     'text-gray-300 hover:text-white',
-                                    'block px-3 py-2 rounded-md text-base font-medium'
+                                    'block px-3 py-2 rounded-md text-base font-medium txt'
                                 )}
                             >
                                 About Us
@@ -254,10 +256,15 @@ export default function Navbar() {
                                 href="/"
                                 className={classNames(
                                     'text-gray-300 hover:text-white',
-                                    'block px-3 py-2 rounded-md text-base font-medium'
+                                    'block px-3 py-2 rounded-md text-base font-medium txt'
                                 )}
                             >
                                 Our Showcase
+                                <div className='absolute sx:right-34 top-42 xsm:right-60'>
+                                    <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5
+                                 text-white" aria-hidden="true" />
+                                </div>
+
                                 {
                                     navigation.map((item) => (
                                         <Disclosure.Button
@@ -287,10 +294,14 @@ export default function Navbar() {
 
                                 className={classNames(
                                     'text-gray-300 hover:text-white',
-                                    'block px-3 py-2 rounded-md text-base font-medium'
+                                    'block px-3 py-2 rounded-md text-base font-medium txt'
                                 )}
                             >
                                 Our Service
+                                <div className='absolute sx:right-34 top-54 xsm:right-60'>
+                                    <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5
+                                 text-white" aria-hidden="true" />
+                                </div>
                                 {
                                     navigation1.map((item) => (
                                         <Disclosure.Button
@@ -314,7 +325,7 @@ export default function Navbar() {
                                 href="/"
                                 className={classNames(
                                     'text-gray-300 hover:text-white',
-                                    'block px-3 py-2 rounded-md text-base font-medium'
+                                    'block px-3 py-2 rounded-md text-base font-medium txt'
                                 )}
                             >
                                 Contact Us
