@@ -7,8 +7,8 @@ const Section1 = () => {
                 <h1 className='lg:text-4xl sm:text-2xl xsm:text-xl sx:text-base font-semibold text-center head py-10'>RAKSHAM DEFINES THE MOMENT SAVER </h1>
             </div>
             <section className="text-gray-600 body-font">
-                <div className="container mx-auto flex md:px-10 md:py-24 sm:py-10 md:flex-row flex-col items-center">
-                    <div className="lg:max-w-ss lg:w-full md:w-1/2 w-4/6 mb-10 md:mb-0">
+                <div className="container mx-auto flex md:px-2 md:py-24 sm:py-10 md:flex-row flex-col items-center">
+                    <div className="lg:max-w-ss lg:w-full md:w-1/2 w-4/6 mb-10 md:mb-0 sx:w-full">
                         <img className="object-cover object-center rounded" alt="hero" src="/img_1.jpg" />
                     </div>
                     <div className="lg:flex-grow sx:text-sm md:text-base md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
