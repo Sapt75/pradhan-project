@@ -158,9 +158,9 @@ export default function Navbar() {
                                                             'px-3 py-2 rounded-md text-sm font-medium'
                                                         )}
                                                     >
-                                                        Our Service
+                                                        OUR SERVICE
                                                     </a>
-                                                    <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 absolute left-20 top-2 text-white" aria-hidden="true" />
+                                                    <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 absolute left-24 top-2 text-white" aria-hidden="true" />
                                                 </Menu.Button>
                                             </div>
                                             <Transition
